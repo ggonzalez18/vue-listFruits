@@ -12,20 +12,12 @@ const app = new Vue({
         stock: 13,
       },
       {
-        name: 'Pera',
-        stock: 4,
-      },
-      {
         name: 'Kiwi',
         stock: 18,
       },
       {
         name: 'Melones',
         stock: 7,
-      },
-      {
-        name: 'Sandia',
-        stock: 5,
       }
     ],
     newFruit: "",
@@ -37,6 +29,7 @@ const app = new Vue({
         name: this.newFruit,
         stock: this.stock
       })
+      this.newFruit = ''
     }
   }
 })
