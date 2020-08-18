@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>prueba</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <h2 class="mt-3 mb-5">{{title}}</h2>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Ingresa una fruta</span>
+  </div>
+  <input type="text" class="form-control" v-model="newFruit">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Ingresa cantidad de frutas en unidades</span>
+    </div>
+    <input type="text" class="form-control" v-model="stock">
+  </div>
+  <button @click="addFruits" class="btn btn-info mb-3">Agregar</button>
+    <h4 class="list-group-item">Mi pedido:</h4>
+    <ul>
+      <li v-for="fruit in fruits" class="list-group-item"><b>{{fruit.name}}</b> - Cant.disponible: {{fruit.stock}}
+        <span v-if="fruit.stock <= 8"> - Últimas unidades</span></li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
